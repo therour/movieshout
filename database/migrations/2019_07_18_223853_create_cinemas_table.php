@@ -16,14 +16,11 @@ class CreateCinemasTable extends Migration
         Schema::create('cinemas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('provider');
-            $table->string('provider_id');
+            $table->string('provider', 50)->index();
+            $table->string('provider_id')->index();
             $table->string('link');
-            $table->string('city');
+            $table->string('city')->index();
             $table->timestamps();
-
-            $table->index(['provider', 'provider_id']);
-            $table->index('city');
         });
     }
 
