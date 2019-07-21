@@ -14,8 +14,8 @@ class CreateShowtimesTable extends Migration
     public function up()
     {
         Schema::create('showtimes', function (Blueprint $table) {
-            $table->string('provider_id')->index();
-            $table->string('provider')->index();
+            $table->string('provider_id', 100)->index();
+            $table->string('provider', 50)->index();
             $table->dateTime('showtime')->index();
             $table->string('movie_id')->index();
             $table->string('cinema_id')->index();
