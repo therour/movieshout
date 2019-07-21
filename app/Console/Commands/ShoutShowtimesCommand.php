@@ -49,7 +49,7 @@ class ShoutShowtimesCommand extends Command
      */
     public function handle()
     {
-        $date = Carbon::create($this->option('date'));
+        $date = Carbon::parse($this->option('date'));
 
         $this->provider->syncShowtimes($date);
     }
