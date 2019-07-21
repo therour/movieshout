@@ -18,5 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('cinemas', 'Api\CinemaController@index');
+Route::get('movies', 'Api\MovieController@index');
 Route::get('cities', 'Api\CityController@index');
-Route::get('cinemas/{cinema}/showtimes', 'Api\ShowtimeController@index');
+Route::get('showtimes', 'Api\ShowtimeController@index');
+// Route::get('showtimes', )

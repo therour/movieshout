@@ -22,6 +22,11 @@ class Cinema extends Model
         return $query->where('provider', $name);
     }
 
+    public function scopeCity(Builder $query, $city)
+    {
+        return $query->where('city', $city);
+    }
+
     public function showtimes()
     {
         return $this->hasMany(Showtime::class, ['cinema_id', 'provider'], ['provider_id', 'provider']);

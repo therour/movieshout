@@ -4,6 +4,9 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Console\Commands\ShoutCinemasCommand;
+use App\Console\Commands\ShoutMoviesCommand;
+use App\Console\Commands\ShoutShowtimesCommand;
 
 class Kernel extends ConsoleKernel
 {
@@ -24,8 +27,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command(ShoutCinemasCommand::class)->dailyAt('03:00');
+        $schedule->command(ShoutMoviesCommand::class)->dailyAt('03:05');
+        $schedule->command(ShoutShowtimesCommand::class)->dailyAt('03:15');
     }
 
     /**
