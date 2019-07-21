@@ -4,10 +4,18 @@ namespace App\Models;
 
 use Awobaz\Compoships\Compoships;
 use Illuminate\Database\Eloquent\Model;
+use CoenJacobs\EloquentCompositePrimaryKeys\HasCompositePrimaryKey;
 
 class Showtime extends Model
 {
-    use Compoships;
+    use Compoships, HasCompositePrimaryKey;
+
+    /**
+     * The primary key associated with the table.
+     *
+     * @var string
+     */
+    protected $primaryKey = ['provider', 'provider_id'];
 
     /**
      * The attributes that are mass assignable.
